@@ -43,9 +43,22 @@ function ahorro (){
 }
 
 function mensaje (){
-    alert("Su ahorro es de $" + resultado)
+    alert("Su ahorro TOTAL es de $" + resultado)
 }
 
 ahorro ()
 mensaje ()
 
+//Uso de WHILE
+// Asesoría gratuita a 3 personas
+
+let respuesta=prompt("Los primeros 3 en inscribirse recibirán una asesoría GRATIS. Le gustaría anotarse?")
+
+
+let asesoria = 1
+while(asesoria <= 5){
+    console.log("¡Gracias por solicitar su asesoría gratuita! Ud recibió la promo número: " + asesoria)
+    asesoria++
+}
+
+console.log(asesoria)
