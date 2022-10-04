@@ -28,7 +28,7 @@ if (day < 10){
 } else if (day < 20){
     alert ("Recuerde ahorrar el 10% de su sueldo")
 } else {
-    alert ("Ahora sí puede invertir el saldo de su sueldo")
+    alert ("Recuerde invertir el dinero restante de su sueldo")
 }
 
 //uso de FUNCION
@@ -49,11 +49,8 @@ function mensaje (){
 ahorro ()
 mensaje ()
 
-//Uso de WHILE
-// Asesoría gratuita a 3 personas
-
-let respuesta=prompt("Los primeros 3 en inscribirse recibirán una asesoría GRATIS. Le gustaría anotarse?")
-
+//Uso de WHILE - se muestra por consola
+// Asesoría gratuita a 3 personas 
 
 let asesoria = 1
 while(asesoria <= 5){
