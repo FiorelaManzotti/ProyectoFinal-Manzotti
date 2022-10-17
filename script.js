@@ -1,13 +1,49 @@
-// iniciando proyecto para preEntrega1 Javascript Manzotti
+// PreEntrega2 Javascript Manzotti
 
-//uso de WHILE
-//saludo de bienvenida
+//uso de Objeto - Class y Constructores - mostrado por consola
 
-while( !(input = prompt('¿Cómo te llamas?')) ){
-    alert("No recibimos la información.")
+class Usuario {
+    constructor (nombre, edad, pais) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.pais = pais;
+    }
 }
 
-alert("¡Bienvenid@ " + input + " a nuestra página!") 
+const usuario1 = new Usuario (prompt("ingrese su nombre"), prompt("ingrese su edad"), prompt("ingrese su pais"))
+
+console.log (usuario1)
+
+//Uso de Arrays - mostrado por Consola
+
+let listaDeSuper = ["leche", "queso", "frutas", "verduras", "carnes", "mermelada", "manteca", "galletitas", "café", "cacao", "azúcar"]
+
+let ultimoElemento= listaDeSuper.length - 1
+
+console.log(listaDeSuper)
+
+console.log(ultimoElemento)
+
+listaDeSuper.forEach(element => console.log(element));
+
+//Uso de FILTER con array - mostrado por consola
+let verduleria = ['frutas', 'verduras'];
+
+function filterItems(query) {
+    return verduleria.filter(function(el) {
+        return el.toLowerCase().indexOf(query.toLowerCase()) > -1;
+        })
+    }
+
+console.log(filterItems('fr')); 
+console.log(filterItems('ver')); 
+
+//USO de FIND con array - mostrado por consola
+let frutasVerduras = ["frutas", "verduras"];
+
+const index = frutasVerduras.findIndex(fruit => fruit === "frutas");
+
+console.log(frutasVerduras[index]); 
 
 //uso de FUNCION
 //función notificar fecha y hora
@@ -59,3 +95,4 @@ while(asesoria <= 5){
 }
 
 console.log(asesoria)
+
