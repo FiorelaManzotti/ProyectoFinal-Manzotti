@@ -1,6 +1,7 @@
 // PreEntrega2 Javascript Manzotti
 
 //uso de Objeto - Class y Constructores - mostrado por consola
+//registro de datos de usuario
 
 class Usuario {
     constructor (nombre, edad, pais) {
@@ -15,8 +16,9 @@ const usuario1 = new Usuario (prompt("ingrese su nombre"), prompt("ingrese su ed
 console.log (usuario1)
 
 //Uso de Arrays - mostrado por Consola
+//lista de compras de supermercado
 
-let listaDeSuper = ["leche", "queso", "frutas", "verduras", "carnes", "mermelada", "manteca", "galletitas", "café", "cacao", "azúcar"]
+const listaDeSuper = ["leche", "queso", "frutas", "verduras", "carnes", "mermelada", "manteca", "galletitas", "café", "cacao", "azúcar"]
 
 let ultimoElemento= listaDeSuper.length - 1
 
@@ -27,6 +29,7 @@ console.log(ultimoElemento)
 listaDeSuper.forEach(element => console.log(element));
 
 //Uso de FILTER con array - mostrado por consola
+//filtrar productos de verduleria
 let verduleria = ['frutas', 'verduras'];
 
 function filterItems(query) {
@@ -39,6 +42,8 @@ console.log(filterItems('fr'));
 console.log(filterItems('ver')); 
 
 //USO de FIND con array - mostrado por consola
+//encontrar frutas, verduras
+
 let frutasVerduras = ["frutas", "verduras"];
 
 const index = frutasVerduras.findIndex(fruit => fruit === "frutas");
