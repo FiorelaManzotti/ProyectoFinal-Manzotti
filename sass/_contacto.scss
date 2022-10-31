@@ -1,0 +1,61 @@
+//inicio estilos pag contacto
+#contacto{
+    height: 100vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 100px;
+    //estilo a form de contacto
+    .contact-title{
+        font-size: 30px;
+        font-weight: 600;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        color: yellowgreen;
+    }
+    .label{
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .input{
+        height: 30px;
+        outline: none;
+        padding: 5px 0;
+        border-bottom: 2px solid yellowgreen;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        width: 100%;
+        color: #121212;
+        background-color: transparent;
+    } 
+    .textarea{
+        height: 100px;
+        outline: none;
+        padding: 5px 0;
+        border-bottom: 2px solid yellowgreen;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        width: 100%;
+        color: #121212;
+        background-color: transparent;
+        resize: none;
+    }
+    //estilo a boton de enviar
+    .boton{
+        padding: 18px 55px;
+        background-color: #121212;
+        border-radius: 50px;
+        color: #f2f2f2;
+        font-weight: 600;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        &:hover{
+            background-color: yellowgreen;
+        }
+    }
+}
+//fin estilos pag contacto
