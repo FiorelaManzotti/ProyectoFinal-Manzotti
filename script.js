@@ -101,6 +101,133 @@ while(asesoria <= 5){
 
 console.log(asesoria)
 
+//INICIO LISTA SUPERMERCADO
+
+function guardarProductoEnLocalStorage (producto) {
+
+    // Traigo en localStorage
+    const productosEnLS = localStorage.getItem("productos");
+
+    if(productosEnLS !== null) {
+
+        // Parseo lo que tengo en localStorage
+        const productos = JSON.parse(productosEnLS);
+
+        // Encuentro el índice en donde se encuentra el elemento a buscar
+        const indiceProductoEncontrado = productos.findIndex( (elemento) => {
+            return elemento.nombre === producto.nombre;
+        });
+
+        // Utilizo el índice buscado para pisar el stock por el que tiene el nuevo producto
+        productos[indiceProductoEncontrado].stock = producto.stock;
+
+        // Vuelvo a cambiar el localStorage
+        localStorage.setItem("productos", JSON.stringify(productos));
+
+        // Renderizar tabla
+        renderizarTabla(productos);
+    }
+}
+
+function renderizarTabla (productos) {
+
+    const bodyTabla = document.getElementById("body_productos");
+
+    // Limpio body de la tabla
+    bodyTabla.innerHTML = "";
+
+    for(const producto of productos) {
+
+        // Creo la fila
+        const tr = document.createElement("tr");
+
+        // Columna nombre
+        const td1 = document.createElement("td");
+        td1.innerText = producto.nombre;
+
+        // Columna stock
+        const td2 = document.createElement("td");
+        td2.innerText = producto.stock;
+
+        // Columna acciones
+        const td3 = document.createElement("td");
+
+        // Creo los botones
+        const botonSumarStock = document.createElement("button");
+        botonSumarStock.innerText = "+";
+        const botonRestarStock = document.createElement("button");
+        botonRestarStock.innerText = "-";
+
+        // Agregar eventos del botón
+        botonSumarStock.addEventListener("click", () => {
+            producto.stock += 1;
+
+            guardarProductoEnLocalStorage(producto);
+        });
+
+        botonRestarStock.addEventListener("click", () => {
+            producto.stock -= 1;
+
+            guardarProductoEnLocalStorage(producto);
+        });
+
+        // Agregar botones a la columna "Acciones"
+        td3.append(botonSumarStock);
+        td3.append(botonRestarStock);
+
+        tr.append(td1);
+        tr.append(td2);
+        tr.append(td3);
+
+        // Agregar tr al body
+        bodyTabla.append(tr);
+    }
+
+}
+
+let productos = [];
+
+// Chequeo si tengo productos en localStorage
+const productosStorage = localStorage.getItem("productos");
+
+if(productosStorage !== null) {
+    productos = JSON.parse(productosStorage);
+}
+
+// Detectamos evento SUBMIT de formulario
+const formularioAgregarProducto = document.getElementById("formulario_agregar_producto");
+formularioAgregarProducto.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+
+    // Obtengo nombre y stock
+    const inputNombreProducto = document.getElementById("nombre_producto");
+    const inputStockProducto = document.getElementById("stock_producto");
+
+    const nombreProducto = inputNombreProducto.value;
+    const stockProducto = inputStockProducto.value;
+
+    // Limpiar inputs
+    inputNombreProducto.value = "";
+    inputStockProducto.value = "";
+
+    // Agrego producto al array y luego al localStorage
+    productos.push({
+        nombre: nombreProducto,
+        stock: parseInt(stockProducto),
+    });
+
+    localStorage.setItem("productos", JSON.stringify(productos));
+
+    // Renderizar tabla
+    renderizarTabla(productos);
+});
+
+// Renderizar los productos por primera vez
+renderizarTabla(productos);
+
+//FIN LISTA SUPER
+
 //Botón enviar Form contacto con EVENTS
 //EVENTO DE MOUSE "click"
 
