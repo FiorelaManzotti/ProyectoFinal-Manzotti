@@ -101,3 +101,14 @@ while(asesoria <= 5){
 
 console.log(asesoria)
 
+//Botón enviar Form contacto con EVENTS
+
+const boton = document.getElementById ("botonEnviar");
+
+boton.addEventListener("click", () => {
+    console.log("Se apretó el botón")
+});
+
+function callbackClick () {
+    console.log("Se apretó el botón")
+}

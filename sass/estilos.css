@@ -97,7 +97,7 @@ footer p {
   background-color: transparent;
   resize: none;
 }
-#contacto .boton {
+#contacto #botonEnviar {
   padding: 18px 55px;
   background-color: #121212;
   border-radius: 50px;
@@ -107,6 +107,6 @@ footer p {
   font-size: 18px;
   cursor: pointer;
 }
-#contacto .boton:hover {
+#contacto #botonEnviar:hover {
   background-color: yellowgreen;
 }/*# sourceMappingURL=estilos.css.map */
