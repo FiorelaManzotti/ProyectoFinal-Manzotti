@@ -102,6 +102,7 @@ while(asesoria <= 5){
 console.log(asesoria)
 
 //Botón enviar Form contacto con EVENTS
+//event "click"
 
 const boton = document.getElementById ("botonEnviar");
 
@@ -112,3 +113,14 @@ boton.addEventListener("click", () => {
 function callbackClick () {
     console.log("Se apretó el botón")
 }
+
+//events "mouseover" y "mouseout"
+const hoverBoton = document.getElementById ("botonEnviar");
+
+hoverBoton.addEventListener("mouseover", () => {
+    hoverBoton.style.backgroundColor = "red"
+})
+
+hoverBoton.addEventListener("mouseout", () => {
+    hoverBoton.style.backgroundColor = "black"
+})
