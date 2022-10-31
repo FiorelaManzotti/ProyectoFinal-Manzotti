@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -26,6 +27,28 @@ main {
   width: 100%;
   height: auto;
   background-color: #e7eee8;
+  /*     1. Creá un nuevo archivo .css y vinculalo al documento HTML anterior.
+
+      2. Dale estilo a tu <body>:
+
+      Modificá la tipografía, el color de fondo y centrá el contenido.
+      Cambiá el color de <h1> a blanco.
+      3. Estilizá el input principal. En tu CSS incluí estas propiedades:
+
+      Dale un width de 450px y un height de 50px.
+
+      Dale un margen general de 5px, un padding top y bottom de 0px y un padding left y right de 20px.
+
+      Eliminá el borde que trae el input por default.
+
+      Agregá un border-radius de 10px, un background-color: white y un font-size de 18px. */
+  /*   4. Dale estilo a tu button. En tu CSS, hacé la declaración apuntando a la Clase .boton-agregar:
+
+    Dale un width y un height de 50px.
+    Dale un margen general de 5px.
+    Eliminá el borde que trae por defecto.
+    Agregá un border-radius de 10px, cambiá el color de fondo a rgb(255, 6, 46); y el color del texto a blanco.
+    Usá el pseudo-selector hover para que la opacidad del botón sea de 0.9 al posar el cursor encima. */
 }
 main h2 {
   font-size: 35px;
@@ -40,6 +63,24 @@ main p {
   padding: 2rem;
   text-align: center;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+main table, main th, main td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+main table {
+  margin-top: 1rem;
+  padding: 10px;
+}
+main .inputDiv {
+  text-align: center;
+  background-color: blue;
+  width: auto;
+  margin: 30px;
+}
+main .container {
+  text-align: center;
+  margin: 30px;
 }
 
 footer {

@@ -101,27 +101,23 @@ while(asesoria <= 5){
 
 console.log(asesoria)
 
-//INICIO LISTA SUPERMERCADO
+//INICIO LISTA SUPER
 
+//Usando Local Storage
 function guardarProductoEnLocalStorage (producto) {
 
-    // Traigo en localStorage
     const productosEnLS = localStorage.getItem("productos");
 
     if(productosEnLS !== null) {
 
-        // Parseo lo que tengo en localStorage
         const productos = JSON.parse(productosEnLS);
 
-        // Encuentro el índice en donde se encuentra el elemento a buscar
         const indiceProductoEncontrado = productos.findIndex( (elemento) => {
             return elemento.nombre === producto.nombre;
         });
 
-        // Utilizo el índice buscado para pisar el stock por el que tiene el nuevo producto
         productos[indiceProductoEncontrado].stock = producto.stock;
 
-        // Vuelvo a cambiar el localStorage
         localStorage.setItem("productos", JSON.stringify(productos));
 
         // Renderizar tabla
@@ -131,49 +127,44 @@ function guardarProductoEnLocalStorage (producto) {
 
 function renderizarTabla (productos) {
 
-    const bodyTabla = document.getElementById("body_productos");
+    const bodyTabla = document.getElementById("bodyProductos");
 
-    // Limpio body de la tabla
     bodyTabla.innerHTML = "";
 
     for(const producto of productos) {
 
-        // Creo la fila
+        // Creo la tabla
         const tr = document.createElement("tr");
 
-        // Columna nombre
         const td1 = document.createElement("td");
         td1.innerText = producto.nombre;
 
-        // Columna stock
         const td2 = document.createElement("td");
-        td2.innerText = producto.stock;
+        td2.innerText = producto.cantidad;
 
-        // Columna acciones
         const td3 = document.createElement("td");
 
         // Creo los botones
-        const botonSumarStock = document.createElement("button");
-        botonSumarStock.innerText = "+";
-        const botonRestarStock = document.createElement("button");
-        botonRestarStock.innerText = "-";
+        const botonSumarCantidad = document.createElement("button");
+        botonSumarCantidad.innerText = "+";
+        const botonRestarCantidad = document.createElement("button");
+        botonRestarCantidad.innerText = "-";
 
-        // Agregar eventos del botón
-        botonSumarStock.addEventListener("click", () => {
-            producto.stock += 1;
+        botonSumarCantidad.addEventListener("click", () => {
+            producto.cantidad += 1;
 
             guardarProductoEnLocalStorage(producto);
         });
 
-        botonRestarStock.addEventListener("click", () => {
-            producto.stock -= 1;
+        botonRestarCantidad.addEventListener("click", () => {
+            producto.cantidad -= 1;
 
             guardarProductoEnLocalStorage(producto);
         });
 
         // Agregar botones a la columna "Acciones"
-        td3.append(botonSumarStock);
-        td3.append(botonRestarStock);
+        td3.append(botonSumarCantidad);
+        td3.append(botonRestarCantidad);
 
         tr.append(td1);
         tr.append(td2);
@@ -187,34 +178,31 @@ function renderizarTabla (productos) {
 
 let productos = [];
 
-// Chequeo si tengo productos en localStorage
 const productosStorage = localStorage.getItem("productos");
 
 if(productosStorage !== null) {
     productos = JSON.parse(productosStorage);
 }
 
-// Detectamos evento SUBMIT de formulario
-const formularioAgregarProducto = document.getElementById("formulario_agregar_producto");
-formularioAgregarProducto.addEventListener("submit", (e) => {
+// evento SUBMIT
+const formularioSupermercado = document.getElementById("formularioSupermercado");
+formularioSupermercado.addEventListener("submit", (e) => {
 
     e.preventDefault();
 
-    // Obtengo nombre y stock
-    const inputNombreProducto = document.getElementById("nombre_producto");
-    const inputStockProducto = document.getElementById("stock_producto");
+    const inputNombreProducto = document.getElementById("nombreProducto");
+    const inputCantidadProducto = document.getElementById("cantidadProducto");
 
-    const nombreProducto = inputNombreProducto.value;
-    const stockProducto = inputStockProducto.value;
+    const nombreProductos = inputNombreProducto.value;
+    const cantidadProductos = inputCantidadProducto.value;
 
-    // Limpiar inputs
     inputNombreProducto.value = "";
-    inputStockProducto.value = "";
+    inputCantidadProducto.value = "";
 
     // Agrego producto al array y luego al localStorage
     productos.push({
-        nombre: nombreProducto,
-        stock: parseInt(stockProducto),
+        nombre: nombreProductos,
+        cantidad: parseInt(cantidadProductos),
     });
 
     localStorage.setItem("productos", JSON.stringify(productos));
@@ -227,6 +215,66 @@ formularioAgregarProducto.addEventListener("submit", (e) => {
 renderizarTabla(productos);
 
 //FIN LISTA SUPER
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//INICIO FORM DE CONTACTO
 
 //Botón enviar Form contacto con EVENTS
 //EVENTO DE MOUSE "click"
@@ -272,4 +320,5 @@ contacto.addEventListener("submit", (event) => {
 
 console.log("SE ENVIÓ EL FORMULARIO");
 
-});
+})
+

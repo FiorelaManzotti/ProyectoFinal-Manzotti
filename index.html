@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ba0ece2d64.js"></script>
     <link rel="stylesheet" href="/css/estilos.css">
     <title>Pre entrega 1 Manzotti</title>
 </head>
@@ -16,7 +17,39 @@
     <!-- inicio contenido principal -->
     <main>
         <h2>Simplify your life</h2>
-        <p>Here you will find a supermarket list.</p>
+        <!-- inicio lista supermercado -->
+        <h3>Supermarket List</h3>
+        <form id="formularioSupermercado">
+            <input type="text" id="nombreProducto" autocomplete="off">
+            <input type="number" id="cantidadProducto" autocomplete="off">
+            <button type="submit">Agregar</button>
+        </form>
+        <table id="tablaProductos">
+            <thead>
+                <tr>
+                    <th>Nombre Producto</th>
+                    <th>Cantidad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="bodyProductos">
+            </tbody>
+        </table>
+        <!-- fin lista supermercado -->
+        <h3>To Do List</h3>
+        <div class="inputDiv">
+            <input type="text" name="" id="" class="input" placeholder="tarea a agregar">
+            <button class="botonAgregar"><i class="fas fa-plus"></i></button>
+        </div>
+        <div class="container">
+            <div class="item">
+            <input type="text" class="itemInput" disabled>
+            <button class="botonRemover"><i class="fa-solid fa-trash"></i></button>
+            </div>
+        </div>
+
+
+
         <p>What day of the month is it? Here's a reminder of your daily tasks!</p>
         <p>How much money can you save?</p>
         <p>Everything you need to simplify your life, you can find it RIGHT HERE!</p>
