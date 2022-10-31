@@ -102,7 +102,7 @@ while(asesoria <= 5){
 console.log(asesoria)
 
 //Botón enviar Form contacto con EVENTS
-//event "click"
+//EVENTO DE MOUSE "click"
 
 const boton = document.getElementById ("botonEnviar");
 
@@ -114,7 +114,7 @@ function callbackClick () {
     console.log("Se apretó el botón")
 }
 
-//events "mouseover" y "mouseout"
+//EVENTO DE MOUSE "mouseover" y "mouseout"
 const hoverBoton = document.getElementById ("botonEnviar");
 
 hoverBoton.addEventListener("mouseover", () => {
@@ -124,3 +124,25 @@ hoverBoton.addEventListener("mouseover", () => {
 hoverBoton.addEventListener("mouseout", () => {
     hoverBoton.style.backgroundColor = "black"
 })
+
+//Recarga FORMULARIO usando EVENT-TARGET-SUBMIT
+
+const nombreApellido = document.getElementById("nombreApellido");
+const mail = document.getElementById("mail");
+const tipoConsulta = document.getElementById("tipoConsulta");
+const textoMensaje = document.getElementById("textoMensaje");
+const contacto = document.getElementById("contacto");
+
+contacto.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+    const target = event.target;
+
+    nombreApellido.value = "";
+    mail.value = "";
+    tipoConsulta.value = "";
+    textoMensaje.value = "";
+
+console.log("SE ENVIÓ EL FORMULARIO");
+
+});

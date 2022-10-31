@@ -24,14 +24,14 @@
         <form id="contacto" action="" name="contact" method="POST" data-netlify="true">
             <h4 class="contact-title">Contactanos</h4>
             <label for="nombre_apellido" class="label">Nombre y Apellido</label>
-            <input type="text" name="nombre" required class="input">
+            <input type="text" name="nombre" required class="input" id="nombreApellido" autocomplete="off">
             <label for="mail" class="label">Correo electrónico</label>
-            <input type="email" name="mail" class="input">
+            <input type="email" name="mail" class="input" autocomplete="off" id="mail">
             <label for="tipo de consulta" class="label">Tipo de consulta</label>
-            <input type="text" name="tipo de consulta" class="input">  
+            <input type="text" name="tipo de consulta" class="input" autocomplete="off" id="tipoConsulta">  
             <label for="mensaje" class="label">Mensaje</label>
-            <textarea name="mensaje" id="" class="textarea"></textarea><br>
-            <button id="botonEnviar" type="button" value="Enviar"> Enviar </button>
+            <textarea name="mensaje" class="textarea" id="textoMensaje"></textarea><br>
+            <button id="botonEnviar" type="submit"> Enviar </button>
         </form>
         <!-- fin form -->
     </main>
