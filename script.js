@@ -36,6 +36,8 @@ buttonAdd.addEventListener("click", (e) => {
     addEvent();
 });
 
+//funcion para agregar eventos
+
 function addEvent(){
     if (eventName.value === "" || eventDate.value === ""){
         return;
@@ -57,6 +59,8 @@ function addEvent(){
 
     renderEvents();
 }
+
+//funcion para calcular cuenta regresiva
 
 function dateDiff(d){
     const targetDate = new Date (d);
@@ -86,7 +90,7 @@ function renderEvents(){
     });
 
     //Modificando NODO con DOM y usando querySelectorAll
-    
+
     eventsContainer.innerHTML = eventsHTML.join("");
     document.querySelectorAll('.buttonDelete').forEach(button => {
         button.addEventListener('click', e => {
