@@ -84,7 +84,9 @@ function renderEvents(){
             </div>
         `;
     });
+
     //Modificando NODO con DOM y usando querySelectorAll
+    
     eventsContainer.innerHTML = eventsHTML.join("");
     document.querySelectorAll('.buttonDelete').forEach(button => {
         button.addEventListener('click', e => {
