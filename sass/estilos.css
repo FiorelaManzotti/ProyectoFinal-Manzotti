@@ -154,9 +154,11 @@ footer p {
 #agenda {
   font-family: Arial, Helvetica, sans-serif;
   background-color: pink;
+  padding: 1px;
 }
 #agenda h3 {
   text-align: center;
+  padding: 10px;
 }
 #agenda .formAgenda {
   background-color: white;
@@ -170,6 +172,8 @@ footer p {
   display: block;
   width: 100%;
   box-sizing: border-box;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 #agenda .formAgenda form #buttonAdd {
   border: none;
@@ -177,6 +181,7 @@ footer p {
   color: white;
   padding: 10px;
   border-radius: 5px;
+  text-transform: capitalize;
 }
 #agenda #eventsContainer {
   background-color: white;

@@ -1,8 +1,10 @@
 #agenda{
     font-family: Arial, Helvetica, sans-serif;
     background-color: pink;
+    padding: 1px;
     h3{
         text-align: center;
+        padding: 10px;
     }
     .formAgenda{
         background-color: white;
@@ -16,6 +18,8 @@
                 display: block;
                 width: 100%;
                 box-sizing: border-box;
+                text-align: center;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             }
             #buttonAdd{
                 border: none;
@@ -23,6 +27,7 @@
                 color: white;
                 padding: 10px;
                 border-radius: 5px;
+                text-transform: capitalize;
             }
         }
     }
