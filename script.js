@@ -101,6 +101,39 @@ while(asesoria <= 5){
 
 console.log(asesoria)
 
+//INICIO AGENDA
+
+let events = [];
+let arr = [];
+
+const eventName = document.querySelector("#eventName");
+const eventDate = document.querySelector("#eventDate");
+const buttonAdd = document.querySelector("#buttonAdd");
+const eventsContainer = document.querySelector("#eventsContainer");
+
+document.querySelector("formAgenda").addEventListener("submit", (e) => {
+    e.preventDefault();
+    addEvent();
+});
+
+function addEvent(){
+    if (eventName.value === "" || eventDate.value === ""){
+        return;
+    }
+    if (dateDiff(eventDate.value) < 0){
+        return;
+    }
+    const newEvent = {
+        id: (Math.random() * 100).toString(36).slice(3),
+        name: eventName.value,
+        date: eventDate.value,
+    }
+}
+
+
+
+//FIN AGENDA
+
 //INICIO LISTA SUPER
 
 //Usando Local Storage
@@ -215,6 +248,7 @@ formularioSupermercado.addEventListener("submit", (e) => {
 renderizarTabla(productos);
 
 //FIN LISTA SUPER
+
 
 
 

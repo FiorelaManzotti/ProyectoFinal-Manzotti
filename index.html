@@ -36,21 +36,31 @@
             </tbody>
         </table>
         <!-- fin lista supermercado -->
-        <h3>To Do List</h3>
-        <div class="inputDiv">
-            <input type="text" name="" id="" class="input" placeholder="tarea a agregar">
-            <button class="botonAgregar"><i class="fas fa-plus"></i></button>
-        </div>
-        <div class="container">
-            <div class="item">
-            <input type="text" class="itemInput" disabled>
-            <button class="botonRemover"><i class="fa-solid fa-trash"></i></button>
+        
+<!--         <section class="supermercado">
+            <h3>To Do List</h3>
+            <div class="inputDiv">
+                <input type="text" name="" id="" class="input" placeholder="tarea a agregar">
             </div>
-        </div>
-
-
-
+            <button class="botonAgregar"><i class="fas fa-plus"></i></button>            
+            <div class="container">
+                <div class="item">
+                    <input type="text" class="itemInput" disabled>
+                </div>
+                <button class="botonRemover"><i class="fa-solid fa-trash"></i></button>
+            </div>
+        </section> -->
         <p>What day of the month is it? Here's a reminder of your daily tasks!</p>
+        <div id="agenda">
+            <div class="formAgenda">
+                <form action="">
+                    <input type="text" id="eventName">
+                    <input type="date" id="eventDate">
+                    <input type="submit" id="buttonAdd" value="add task">
+                </form>
+            </div>
+            <div id="eventsContainer"></div>
+        </div>
         <p>How much money can you save?</p>
         <p>Everything you need to simplify your life, you can find it RIGHT HERE!</p>
         <!-- inicio form -->
