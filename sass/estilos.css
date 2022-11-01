@@ -149,4 +149,76 @@ footer p {
   border: none;
   font-size: 18px;
   cursor: pointer;
+}
+
+#agenda {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: pink;
+}
+#agenda h3 {
+  text-align: center;
+}
+#agenda .formAgenda {
+  background-color: white;
+  padding: 20px;
+  width: 300px;
+  margin: 0px auto;
+}
+#agenda .formAgenda form input {
+  margin: 5px 0;
+  padding: 5px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+#agenda .formAgenda form #buttonAdd {
+  border: none;
+  background-color: #1860a8;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+#agenda #eventsContainer {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  width: 500px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#agenda #eventsContainer .event {
+  border: solid 1px #ccc;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#agenda #eventsContainer .event .days {
+  text-align: center;
+  width: 100px;
+}
+#agenda #eventsContainer .event .days .daysNumber {
+  font-size: 30px;
+  font-weight: bold;
+  display: block;
+}
+#agenda #eventsContainer .event .eventName {
+  padding: 10px;
+  width: 200px;
+}
+#agenda #eventsContainer .event .eventDate {
+  padding: 10px;
+  width: 100px;
+}
+#agenda #eventsContainer .event .actions {
+  padding: 10px;
+}
+#agenda button {
+  border: none;
+  background-color: red;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
 }/*# sourceMappingURL=estilos.css.map */

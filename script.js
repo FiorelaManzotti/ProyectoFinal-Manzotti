@@ -111,7 +111,23 @@ const eventDate = document.querySelector("#eventDate");
 const buttonAdd = document.querySelector("#buttonAdd");
 const eventsContainer = document.querySelector("#eventsContainer");
 
+const json = load();
+
+try {
+    arr = JSON.parse(json);
+} catch (error) {
+    arr = [];
+}
+events = arr ? [...arr] : [];
+
+renderEvents();
+
 document.querySelector("form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    addEvent();
+});
+
+buttonAdd.addEventListener("click", (e) => {
     e.preventDefault();
     addEvent();
 });
@@ -130,6 +146,8 @@ function addEvent(){
     };
 
     events.unshift(newEvent);
+
+    save(JSON.stringify(events));
 
     eventName.value = "";
 
@@ -166,6 +184,8 @@ function renderEvents(){
         button.addEventListener('click', e => {
             const id = button.getAttribute('data-id');
             events = events.filter(event => event.id !== id);
+
+            save(JSON.stringify(events));
 
             renderEvents();
         });

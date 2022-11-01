@@ -1,0 +1,73 @@
+#agenda{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: pink;
+    h3{
+        text-align: center;
+    }
+    .formAgenda{
+        background-color: white;
+        padding: 20px;
+        width: 300px;
+        margin: 0px auto;
+        form{
+            input{
+                margin: 5px 0;
+                padding: 5px;
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            #buttonAdd{
+                border: none;
+                background-color: #1860a8;
+                color: white;
+                padding: 10px;
+                border-radius: 5px;
+            }
+        }
+    }
+    #eventsContainer{
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px;
+        width: 500px;
+        margin: 100px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        .event{
+            border: solid 1px #ccc;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .days{
+                text-align: center;
+                width: 100px;
+                .daysNumber{
+                    font-size: 30px;
+                    font-weight: bold;
+                    display: block;
+                }
+            }
+            .eventName{
+                padding: 10px;
+                width: 200px;
+            }
+            .eventDate{
+                padding: 10px;
+                width: 100px;
+            }
+            .actions{
+                padding: 10px;
+            }
+        }
+    }
+    button{
+        border: none;
+        background-color: red;
+        padding: 5px;
+        color: white;
+        border-radius: 5px;
+    }
+}
