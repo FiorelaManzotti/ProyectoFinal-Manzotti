@@ -5,11 +5,14 @@
 let events = [];
 let arr = [];
 
+//uso de querySelectors
+
 const eventName = document.querySelector("#eventName");
 const eventDate = document.querySelector("#eventDate");
 const buttonAdd = document.querySelector("#buttonAdd");
 const eventsContainer = document.querySelector("#eventsContainer");
 
+//usando JSON
 const json = load();
 
 try {
@@ -20,6 +23,8 @@ try {
 events = arr ? [...arr] : [];
 
 renderEvents();
+
+//usando EventListeners
 
 document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
@@ -61,6 +66,7 @@ function dateDiff(d){
     return days;
 }
 
+//usando PLANTILLA LITERALS
 function renderEvents(){
     const eventsHTML = events.map(event => {
         return `
@@ -78,6 +84,7 @@ function renderEvents(){
             </div>
         `;
     });
+    //Modificando NODO con DOM y usando querySelectorAll
     eventsContainer.innerHTML = eventsHTML.join("");
     document.querySelectorAll('.buttonDelete').forEach(button => {
         button.addEventListener('click', e => {
@@ -91,6 +98,8 @@ function renderEvents(){
     });
 }
 
+//usando LOCAL STORAGE - CLAVE/VALOR
+
 function save (data){
     localStorage.setItem('items', data);
 }
@@ -103,7 +112,7 @@ function load (){
 
 //INICIO FORM DE CONTACTO
 
-//Botón enviar Form contacto con EVENTS
+//Botón enviar Form contacto con EVENTS y accediendo a NODOS con DOM
 //EVENTO DE MOUSE "click"
 
 const boton = document.getElementById ("botonEnviar");
@@ -116,7 +125,7 @@ function callbackClick () {
     console.log("Se apretó el botón")
 }
 
-//EVENTO DE MOUSE "mouseover" y "mouseout"
+//EVENTO DE MOUSE "mouseover" y "mouseout" y accediendo a NODOS con DOM
 const hoverBoton = document.getElementById ("botonEnviar");
 
 hoverBoton.addEventListener("mouseover", () => {
@@ -128,12 +137,15 @@ hoverBoton.addEventListener("mouseout", () => {
 })
 
 //Recarga FORMULARIO usando EVENT-TARGET-SUBMIT
+//accediendo a NODOS con DOM
 
 const nombreApellido = document.getElementById("nombreApellido");
 const mail = document.getElementById("mail");
 const tipoConsulta = document.getElementById("tipoConsulta");
 const textoMensaje = document.getElementById("textoMensaje");
 const contacto = document.getElementById("contacto");
+
+//usando evento SUBMIT
 
 contacto.addEventListener("submit", (event) => {
 
@@ -149,4 +161,4 @@ console.log("SE ENVIÓ EL FORMULARIO");
 
 })
 
-//INICIO FORM DE CONTACTO
+//FIN FORM DE CONTACTO
