@@ -3,7 +3,7 @@
 //uso de Objeto - Class y Constructores - mostrado por consola
 //registro de datos de usuario
 
-class Usuario {
+/* class Usuario {
     constructor (nombre, edad, pais) {
         this.nombre = nombre;
         this.edad = edad;
@@ -13,12 +13,12 @@ class Usuario {
 
 const usuario1 = new Usuario (prompt("ingrese su nombre"), prompt("ingrese su edad"), prompt("ingrese su pais"))
 
-console.log (usuario1)
+console.log (usuario1) */
 
 //Uso de Arrays - mostrado por Consola
 //lista de compras de supermercado
 
-const listaDeSuper = ["leche", "queso", "frutas", "verduras", "carnes", "mermelada", "manteca", "galletitas", "café", "cacao", "azúcar"]
+/* const listaDeSuper = ["leche", "queso", "frutas", "verduras", "carnes", "mermelada", "manteca", "galletitas", "café", "cacao", "azúcar"]
 
 let ultimoElemento= listaDeSuper.length - 1
 
@@ -26,11 +26,11 @@ console.log(listaDeSuper)
 
 console.log(ultimoElemento)
 
-listaDeSuper.forEach(element => console.log(element));
+listaDeSuper.forEach(element => console.log(element)); */
 
 //Uso de FILTER con array - mostrado por consola
 //filtrar productos de verduleria
-let verduleria = ['frutas', 'verduras'];
+/* let verduleria = ['frutas', 'verduras'];
 
 function filterItems(query) {
     return verduleria.filter(function(el) {
@@ -40,29 +40,29 @@ function filterItems(query) {
 
 console.log(filterItems('fr')); 
 console.log(filterItems('ver')); 
-
+ */
 //USO de FIND con array - mostrado por consola
 //encontrar frutas, verduras
 
-let frutasVerduras = ["frutas", "verduras"];
+/* let frutasVerduras = ["frutas", "verduras"];
 
 const index = frutasVerduras.findIndex(fruit => fruit === "frutas");
 
-console.log(frutasVerduras[index]); 
+console.log(frutasVerduras[index]);  */
 
 //uso de FUNCION
 //función notificar fecha y hora
 
-function fechaYHora (){
+/* function fechaYHora (){
     alert("Hoy es: " + Date ())
 }
 
-fechaYHora ()
+fechaYHora () */
 
 //uso de CONDICIONAL
 //ingresar día del mes para recordar pagos, ahorro o inversión
 
-let day = parseInt(prompt("Ingrese día del mes en números"))
+/* let day = parseInt(prompt("Ingrese día del mes en números"))
 
 if (day < 10){
     alert ("IMPORTANTE! recuerde abonar impuestos y gastos fijos del mes")
@@ -70,12 +70,12 @@ if (day < 10){
     alert ("Recuerde ahorrar el 10% de su sueldo")
 } else {
     alert ("Recuerde invertir el dinero restante de su sueldo")
-}
+} */
 
 //uso de FUNCION
 //simulador de ahorros por mes
 
-let money = parseInt(prompt("ingrese el monto que quiere ahorrar por mes"));
+/* let money = parseInt(prompt("ingrese el monto que quiere ahorrar por mes"));
 let months = parseInt(prompt("ingrese el número de meses"));
 let resultado = 0;
 
@@ -89,17 +89,17 @@ function mensaje (){
 
 ahorro ()
 mensaje ()
-
+ */
 //Uso de WHILE - se muestra por consola
 // Asesoría gratuita a 3 personas 
 
-let asesoria = 1
+/* let asesoria = 1
 while(asesoria <= 5){
     console.log("¡Gracias por solicitar su asesoría gratuita! Ud recibió la promo número: " + asesoria)
     asesoria++
 }
 
-console.log(asesoria)
+console.log(asesoria) */
 
 //INICIO AGENDA
 
@@ -127,16 +127,57 @@ function addEvent(){
         id: (Math.random() * 100).toString(36).slice(3),
         name: eventName.value,
         date: eventDate.value,
-    }
+    };
+
+    events.unshift(newEvent);
+
+    eventName.value = "";
+
+    renderEvents();
 }
 
+function dateDiff(d){
+    const targetDate = new Date (d);
+    const today = new Date ();
+    const difference = targetDate.getTime() - today.getTime();
+    const days = Math.ceil(difference / (1000 * 3600 * 24));
+    return days;
+}
+
+function renderEvents(){
+    const eventsHTML = events.map(event => {
+        return `
+            <div class="event">
+                <div class="days">
+                    <span class="daysNumber">${dateDiff(event.date)}</span>
+                    <span class="daysText">days</span>
+                </div>
+
+                <div class="eventName">${event.name}</div>
+                <div class="eventDate">${event.date}</div>
+                <div class="actions">
+                    <button class="buttonDelete" data-id="${event.id}">Delete</button>
+                </div>
+            </div>
+        `;
+    });
+    eventsContainer.innerHTML = eventsHTML.join("");
+    document.querySelectorAll('.buttonDelete').forEach(button => {
+        button.addEventListener('click', e => {
+            const id = button.getAttribute('data-id');
+            events = events.filter(event => event.id !== id);
+
+            renderEvents();
+        });
+    });
+}
 
 
 //FIN AGENDA
 
 //INICIO LISTA SUPER
 
-//Usando Local Storage
+/* //Usando Local Storage
 function guardarProductoEnLocalStorage (producto) {
 
     const productosEnLS = localStorage.getItem("productos");
@@ -245,7 +286,7 @@ formularioSupermercado.addEventListener("submit", (e) => {
 });
 
 // Renderizar los productos por primera vez
-renderizarTabla(productos);
+renderizarTabla(productos); */
 
 //FIN LISTA SUPER
 
