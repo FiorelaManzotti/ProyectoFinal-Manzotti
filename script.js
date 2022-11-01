@@ -111,7 +111,7 @@ const eventDate = document.querySelector("#eventDate");
 const buttonAdd = document.querySelector("#buttonAdd");
 const eventsContainer = document.querySelector("#eventsContainer");
 
-document.querySelector("formAgenda").addEventListener("submit", (e) => {
+document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
     addEvent();
 });
@@ -170,6 +170,14 @@ function renderEvents(){
             renderEvents();
         });
     });
+}
+
+function save (data){
+    localStorage.setItem('items', data);
+}
+
+function load (){
+    return localStorage.getItem("items");
 }
 
 
