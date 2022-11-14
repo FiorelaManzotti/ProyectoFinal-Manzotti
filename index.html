@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/ba0ece2d64.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/estilos.css">
     <title>Proyecto Final Manzotti</title>
 </head>
@@ -17,8 +18,7 @@
     <!-- inicio contenido principal -->
     <main>
         <h2>No more stress</h2>
-        <p>Here, you can have it all! Ourganize your agenda and to do list in one place.</p>
-        <p>And also, a PLUS! you can check the weather before you make plans! Yes, I know! You're welcome!</p>
+        <p>Here, you can have it all! Organize your agenda and to do list in one place.</p>
         <div id="agenda">
             <h3>Agenda / To Do List</h3>
             <div class="formAgenda">
@@ -31,24 +31,25 @@
             <div id="eventsContainer"></div>
         </div>
         <!-- inicio weather channel -->
-        <div class="encabezado">
-            <h1>Weather Channel</h1>
-            <input type="text" placeholder="Ingresá una ciudad">
-            <button>ENVIAR</button>
-        </div>
-        <div class="container">
-            <ul class="ciudades">
-                <li>
-                    <span id="ciudad"></span><br>
-                    <span id="temperatura"></span><span id="grados"></span><br>
-                    <img id="wicon" src="" alt="Ícono del tiempo"><br>
-                    <span id="descripcion"></span><br>
-                </li>
-            </ul>
+        <p>And also, a PLUS! you can check the weather before you make plans! Yes, I know! You're welcome!</p>
+        <div id="weather">
+            <h3>Weather Channel</h3>
+            <input type="text" placeholder="Enter a city" id="inputWeather">
+            <button id="buttonWeather">Send</button>
+            <div class="containerWeather">
+                <ul class="cities">
+                    <li>
+                        <span id="city"></span><br>
+                        <span id="temperature"></span><span id="degrees"></span><br>
+                        <img id="wicon" src="" alt="Ícono del tiempo"><br>
+                        <span id="description"></span><br>
+                    </li>
+                </ul>
+            </div>
         </div>
         <!-- fin weather channel -->
-        <p>Check this out! We offer the Virtual Assistant Service as well. Contact us to know more about it! </p>
-        <!-- inicio form -->
+        <!-- inicio form contacto-->
+        <h5>Check this out! We offer the Virtual Assistant Service as well. Contact us to know more about it! </h5>
         <form id="contacto" action="" name="contact" method="POST" data-netlify="true">
             <h4 class="contact-title">Contact Us</h4>
             <label for="nombre_apellido" class="label">Full Name</label>
@@ -61,7 +62,7 @@
             <textarea name="mensaje" class="textarea" id="textoMensaje"></textarea><br>
             <button id="botonEnviar" type="submit"> Send Message</button>
         </form>
-        <!-- fin form -->
+        <!-- fin form contacto-->
     </main>
     <!-- fin contenido principal -->
     <!-- inicio footer -->
