@@ -30,6 +30,23 @@
             </div>
             <div id="eventsContainer"></div>
         </div>
+        <!-- inicio weather channel -->
+        <div class="encabezado">
+            <h1>Weather Channel</h1>
+            <input type="text" placeholder="Ingresá una ciudad">
+            <button>ENVIAR</button>
+        </div>
+        <div class="container">
+            <ul class="ciudades">
+                <li>
+                    <span id="ciudad"></span><br>
+                    <span id="temperatura"></span><span id="grados"></span><br>
+                    <img id="wicon" src="" alt="Ícono del tiempo"><br>
+                    <span id="descripcion"></span><br>
+                </li>
+            </ul>
+        </div>
+        <!-- fin weather channel -->
         <p>Check this out! We offer the Virtual Assistant Service as well. Contact us to know more about it! </p>
         <!-- inicio form -->
         <form id="contacto" action="" name="contact" method="POST" data-netlify="true">
@@ -52,7 +69,8 @@
         <p>&copy; 2022 - All rights reserved <br> Developed by FioManzotti</p>
     </footer>
     <!-- fin footer --> 
-    <!-- link Javascript -->
+    <!-- links scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>
