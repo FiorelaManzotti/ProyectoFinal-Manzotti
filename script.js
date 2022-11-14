@@ -12,7 +12,7 @@ const eventDate = document.querySelector("#eventDate");
 const buttonAdd = document.querySelector("#buttonAdd");
 const eventsContainer = document.querySelector("#eventsContainer");
 
-//usando JSON
+//usando JSON y Operador Ternario
 const json = load();
 
 try {
@@ -36,7 +36,7 @@ buttonAdd.addEventListener("click", (e) => {
     addEvent();
 });
 
-//funcion para agregar eventos
+//funcion para agregar eventos y operador lógico or
 
 function addEvent(){
     if (eventName.value === "" || eventDate.value === ""){
@@ -118,7 +118,7 @@ function load (){
 
 //INICIO WEATHER CHANNEL
 
-//usando AJAX y JSON
+//usando AJAX y JSON - API externa
 //Funcion ingresar ciudad para ver el clima
 function enterCity(city) {
     $.getJSON(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=95176c8edea30e33338e0eaddd53a916&units=metric&lang=es`, function(data){
@@ -130,13 +130,23 @@ function enterCity(city) {
         document.querySelector(".containerWeather").style.visibility = "visible"
         console.dir(data)
     })
+    //Uso Sweet Alert
     .fail(function() {
-        alert("City not found");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'City Not Found!',
+        });
     })
 }
 document.querySelector("#buttonWeather").addEventListener("click", function () {
     if (!document.querySelector("#inputWeather").value) {
-        alert("Must enter a city") 
+        //uso de Sweet Alert
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Must Enter a City',
+        })
     } else {
         let city = document.querySelector("#inputWeather").value.split(" ").join("%20")
         document.querySelector("#inputWeather").value = ""
@@ -204,7 +214,14 @@ contacto.addEventListener("submit", (event) => {
     tipoConsulta.value = "";
     textoMensaje.value = "";
 
-console.log("SE ENVIÓ EL FORMULARIO");
+    //uso Libreria Sweet Alert
+Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'Your message has been sent',
+    showConfirmButton: false,
+    timer: 3000
+    })
 
 })
 
