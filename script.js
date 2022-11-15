@@ -2,6 +2,8 @@
 
 //INICIO QUOTE CREATOR
 
+//manejo de Promesa con FETCH
+
 const quote = document.getElementById("quote");
 const author = document.getElementById("author");
 const btn = document.getElementById("btn");
