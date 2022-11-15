@@ -309,6 +309,47 @@ h5 {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #717681;
+}
+
+main .container {
+  margin: 20px auto;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main .container .quoteBox {
+  border: 2px solid #ddd;
+  padding: 30px 20px;
+  margin-bottom: 20px;
+}
+
+main .container .quoteBox #quote {
+  color: #444;
+  text-align: center;
+}
+
+main .container .quoteBox #author {
+  float: right;
+  color: #888;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+main .container #btn {
+  align-self: center;
+  border: 2px solid #666;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  color: #666;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+main .container #btn:focus {
+  outline: none;
 } /*# sourceMappingURL=estilos.css.map */
 
 /*# sourceMappingURL=estilos.css.map */

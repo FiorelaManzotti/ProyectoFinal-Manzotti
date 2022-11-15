@@ -1,5 +1,24 @@
 // PreEntrega3 Javascript Manzotti
 
+//INICIO QUOTE CREATOR
+
+const quote = document.getElementById("quote");
+const author = document.getElementById("author");
+const btn = document.getElementById("btn");
+
+btn.addEventListener("click", getQuote);
+
+function getQuote() {
+    fetch("https://api.quotable.io/random")
+        .then((res) => res.json())
+        .then((data) => {
+        quote.innerHTML = `"${data.content}"`;
+        author.innerHTML = `- ${data.author}`;
+    });
+}
+
+//FIN QUOTE CREATOR
+
 //INICIO AGENDA
 
 let events = [];
@@ -259,14 +278,4 @@ Swal.fire({
 
 //FIN FORM DE CONTACTO
 
-/* fetch('https://api.github.com/users/manishmshiva', {
-    method: "GET",
-    headers: {"Content-type": "application/json;charset=UTF-8"}
-})
-.then(response => response.json()) 
-.then(json => console.log(json));  */
-
-fetch('www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
-    .then(response => response.text())
-    .then(data => console.log(data));
 
