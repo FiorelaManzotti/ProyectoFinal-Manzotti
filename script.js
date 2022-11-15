@@ -258,3 +258,15 @@ Swal.fire({
 })
 
 //FIN FORM DE CONTACTO
+
+/* fetch('https://api.github.com/users/manishmshiva', {
+    method: "GET",
+    headers: {"Content-type": "application/json;charset=UTF-8"}
+})
+.then(response => response.json()) 
+.then(json => console.log(json));  */
+
+fetch('www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
+    .then(response => response.text())
+    .then(data => console.log(data));
+
